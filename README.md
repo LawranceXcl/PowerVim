@@ -87,6 +87,9 @@ gcc             // 快速当前行
 }               // 光标向下移动一个代码块
 di(             // 删除括号里的内容
 di{             // 删除花括号里的内容
+
+//ctrlp
+ctrl - p:       //normal模式下，进行文件查找
 ```
 # 插件
 * a.vim [https://github.com/vim-scripts/a.vim](https://github.com/vim-scripts/a.vim)
@@ -98,6 +101,7 @@ di{             // 删除花括号里的内容
 * commentary [https://github.com/tpope/vim-commentary](https://github.com/tpope/vim-commentary)
 * nerdtree [https://github.com/scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) 
 * vim-gitgutter [https://github.com/airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+* ctrlp(模糊查找): https://github.com/ctrlpvim/ctrlp.vim
 
 # 配置
 每个人都可以在这个基础上进行修改，改成一个属于自己的PowerVim

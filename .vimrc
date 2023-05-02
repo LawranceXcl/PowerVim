@@ -210,6 +210,13 @@ au BufWrite * :Autoformat
 "设置winmanager窗口宽度
 "let g:winManagerWidth = 30
 
+"文件的模糊查找ctrlp
+"https://github.com/ctrlpvim/ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+"忽略.gitignore 文件
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
 " 重新打开文档时光标回到文档关闭前的位置
 if has("autocmd")
     autocmd BufReadPost *
