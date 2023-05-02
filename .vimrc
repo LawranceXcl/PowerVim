@@ -1,4 +1,4 @@
-" Hello，我是PowerVim的作者，程序员Carl，欢迎关注我的微信公众号：代码随想录 
+" Hello，我是PowerVim的作者，程序员Carl，欢迎关注我的微信公众号：代码随想录
 "
 " 定义快捷键的前缀，即<Leader>
 let mapleader=";"
@@ -19,21 +19,21 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 "set autocmd
-set autoindent		" always set autoindenting on 自动缩进
-" indent C++ autoindent private public keyword 
+set autoindent      " always set autoindenting on 自动缩进
+" indent C++ autoindent private public keyword
 set cindent
 set cinoptions=g-1
 "if has("vms")
-"  set nobackup		" do not keep a backup file, use versions instead
+"  set nobackup     " do not keep a backup file, use versions instead
 "else
-"  set backup		" keep a backup file
+"  set backup       " keep a backup file
 "endif
 set nobackup        "I hate backup files.
 set number
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50      " keep 50 lines of command line history
+set ruler       " show the cursor position all the time
+set showcmd     " display incomplete commands
+set incsearch       " do incremental searching
 "设置非兼容模式
 set nocp
 
@@ -57,6 +57,15 @@ set wildmenu
 " 不产生.swp文件
 set noswapfile
 
+" 补全菜单太长
+set pumheight=10
+
+"ime
+set imsearch=0
+imap <C-Space> <C-_>
+nmap <C-Space> <C-_>
+
+
 " 禁止光标闪烁
 " set gcr=a:block-blinkon0
 
@@ -75,7 +84,7 @@ nmap tabc :tabc <CR>
 " go to previous table
 map gp :tabp <CR>
 " 定义快捷键 跳转到光标所在关键词的定义处
-" here are multiple matches, show me a list of all the matching tags 
+" here are multiple matches, show me a list of all the matching tags
 nmap <Leader>gt g<C-]>
 " 定义快捷键 跳回原关键词 与 ;gr 配合使用
 nmap <Leader>gr <C-T>
@@ -120,9 +129,9 @@ nmap <Leader>v :Vex<CR>
 nmap <Leader>r :%s/fileName-/fileName+/g
 " align 表格对齐
 nmap <Leader>t :Tab /
-" 打tag
-" --c++-kinds=+p  : Adds prototypes in the database for C/C++ files.
-"--fields=+iaS   : Adds inheritance (i), access (a) and function
+    " 打tag
+    " --c++-kinds=+p  : Adds prototypes in the database for C/C++ files.
+    "--fields=+iaS   : Adds inheritance (i), access (a) and function
 "                  signatures (S) information.
 "--extra=+q      : Adds context to the tag name. Note: Without this
 "                  option, the script cannot get class members.
@@ -130,14 +139,14 @@ nmap<leader>tg :!ctags -R --fields=+aS --extra=+q<CR>
 " java jdk 补全
 map! <C-O> <C-X><C-O>
 " 使用NERDTree插件查看工程文件。设置快捷键
-nnoremap <silent> <Leader>n  :NERDTreeToggle <CR> 
+nnoremap <silent> <Leader>n  :NERDTreeToggle <CR>
 " 设置NERDTree子窗口位置
 let NERDTreeWinPos="left"
 " 设置忽略的文件
 let NERDTreeIgnore=['\.vim$', '\~$', '\.o$', '\.d$', '\.a$', '\.out$', '\.tgz$']
 
 " 使用TlistToggle查看文件函数列表。设置快捷键：<F12>
-nnoremap  <Leader>m  :TlistToggle <CR> 
+nnoremap  <Leader>m  :TlistToggle <CR>
 " 粘贴到系统剪切板
 map <Leader>y "*y
 "禁止自动改变当前Vim窗口的大小
@@ -145,7 +154,7 @@ let Tlist_Inc_Winwidth=0
 "把方法列表放在屏幕的右侧
 let Tlist_Use_Right_Window=1
 "让当前不被编辑的文件的方法列表自动折叠起来
-let Tlist_File_Fold_Auto_Close=1 
+let Tlist_File_Fold_Auto_Close=1
 " let g:winManagerWindowLayout='FileExplorer'
 " 定义快捷键 打开/关闭 winmanger
 " nmap wm :WMToggle<cr>
@@ -173,20 +182,40 @@ set nofen
 
 let cwd=""
 set tags=tags
-"cs add cscope.out 
+"cs add cscope.out
 let g:miniBufExplMapWindowNavArrows = 1
 "允许光标在任何位置时用CTRL-TAB遍历buffer
 let g:miniBufExplMapCTabSwitchBufs = 1
 
+"clang-format 格式化
+"版本1
+let g:formatterpath = ['/usr/bin/clang-format']
+au BufWrite * :Autoformat
+
+" let g:clang_format #command = 'clang-format'
+" nmap <F4> :ClangFormat<cr>
+" autocmd FileType c,cpp,hpp,cc,h,python ClangFormatAutoEnable
+" let g:clang_format #detect_style_file = 1
+
+" 版本2
+" map <C-K>:py3f /home/xcl/PluginLib/clang-format.py<cr>
+" imap <C-K><c-o>:py3f /home/xcl/PluginLib/clang-format.py<cr>
+" function! Formatonsave()
+"     " let l:formatdiff = 1
+"     let l:lines="all"
+"     py3f /home/xcl/PluginLib/clang-format.py
+" endfunction
+" autocmd BufWritePre *.h,*.cc,*.cpp call Formatonsave()
+
 "设置winmanager窗口宽度
-"let g:winManagerWidth = 30 
+"let g:winManagerWidth = 30
 
 " 重新打开文档时光标回到文档关闭前的位置
 if has("autocmd")
- autocmd BufReadPost *
- \ if line("'\"") > 0 && line ("'\"") <= line("$") |
- \ exe "normal g'\"" |
-\ endif
+    autocmd BufReadPost *
+                \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+                \ exe "normal g'\"" |
+                \ endif
 endif
 
 
@@ -274,43 +303,43 @@ endfunc
 " 创建时间快捷键for markdown
 nmap tm :call SetTime() <CR>
 func SetTime()
-        call append(line("."), "\# ".strftime('%a %d %b %Y'))
+    call append(line("."), "\# ".strftime('%a %d %b %Y'))
 endfunc
 
 nmap tb :call SetTable() <CR>
 func SetTable()
-        call append(line("."), "\| | | ")
-        call append(line(".")+1, "\|---|---|")
-        call append(line(".")+2, "\| | |")
+    call append(line("."), "\| | | ")
+    call append(line(".")+1, "\|---|---|")
+    call append(line(".")+2, "\| | |")
 endfunc
 
 nmap pc :call SetPic() <CR>
 func SetPic()
-        call append(line("."), "\<img src='' width=600 alt=''> </img></div>")
+    call append(line("."), "\<img src='' width=600 alt=''> </img></div>")
 endfunc
 
 nmap pi :call SetPic1() <CR>
 func SetPic1()
-        call append(line("."), "\![]()")
+    call append(line("."), "\![]()")
 endfunc
 
 nmap vi :call SetVideo() <CR>
 func SetVideo()
-        call append(line("."), "\<video src='1.mp4' controls='controls' width='640' height='320' autoplay='autoplay'> Your browser does not support the video tag.</video></div>")
+    call append(line("."), "\<video src='1.mp4' controls='controls' width='640' height='320' autoplay='autoplay'> Your browser does not support the video tag.</video></div>")
 endfunc
 
 nmap cl :call SetCollor() <CR>
 func SetCollor()
-        call append(line("."), "<span  style='color: #f16707;'> </span>")
+    call append(line("."), "<span  style='color: #f16707;'> </span>")
 endfunc
 
 " vim cc
 nmap cc :call SetCC() <CR>
-func SetCC() 
-    call append(line("."), "// vim: et tw=100 ts=4 sw=4 cc=120")  
+func SetCC()
+    call append(line("."), "// vim: et tw=100 ts=4 sw=4 cc=120")
 endfunc
 
-" Hello，我是PowerVim的作者，程序员Carl，欢迎关注我的微信公众号：代码随想录 
+" Hello，我是PowerVim的作者，程序员Carl，欢迎关注我的微信公众号：代码随想录
 
 " 使用的背景主题
 colorscheme Monokai_Gavin
@@ -320,12 +349,12 @@ au FileType cpp setlocal dict+=~/.vim/dictionary/cpp_keywords_list.txt
 au FileType java setlocal dict+=~/.vim/dictionary/java_keywords_list.txt
 " au FileType markdown setlocal dict+=~/.vim/dictionary/words.txt
 
-" for vim-syntastic 
-" disabled Syntastic by default 
+" for vim-syntastic
+" disabled Syntastic by default
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 " open/close Syntastic checker
 nnoremap <Leader>p :SyntasticToggleMode<CR> :w<CR>
-" set vim-syntastic compiler 
+" set vim-syntastic compiler
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 set statusline+=%#warningmsg#
@@ -340,19 +369,19 @@ let g:syntastic_check_on_wq = 0
 " 自动已当前文件为根目录，可能会影响使用:Vex的，我在mac是ok的，但是在centos下:Vex功能错乱了
 " set autochdir
 autocmd BufEnter * silent! lcd %:p:h
-" 需要在哪个目录有类函数补全功能，就加载哪个目录的tags 
+" 需要在哪个目录有类函数补全功能，就加载哪个目录的tags
 " set tags+=/Users/XXX/Documents/workplace/brpc/tags
 
-" complete with no first suggestion 
+" complete with no first suggestion
 " :set completeopt+=noinsert
 
-set completeopt=menu,menuone  
+set completeopt=menu,menuone
 let OmniCpp_MayCompleteDot=1    "  打开  . 操作符
 let OmniCpp_MayCompleteArrow=1  " 打开 -> 操作符
 let OmniCpp_MayCompleteScope=1  " 打开 :: 操作符
 let OmniCpp_NamespaceSearch=1   " 打开命名空间
-let OmniCpp_GlobalScopeSearch=1  
-let OmniCpp_DefaultNamespace=["std"]  
+let OmniCpp_GlobalScopeSearch=1
+let OmniCpp_DefaultNamespace=["std"]
 let OmniCpp_ShowPrototypeInAbbr=1  " 打开显示函数原型
 let OmniCpp_SelectFirstItem = 2 " 自动弹出时自动跳至第一个
 autocmd BufRead scp://* :set bt=acwrite
@@ -368,71 +397,75 @@ nmap <Leader>o o<Esc>
 
 :set syntax=markdown
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
-" au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown 
+" au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 " for me
-func MarkdownSet() 
+func MarkdownSet()
     let filePath=expand('%:p')
     exe ':!open ' . filePath '-a "MacDown"'
 endfunc
 
 " usage :call GenMarkdownSectionNum    给markdown 文件生成目录编号
 function! GenMarkdownSectionNum()
-  if &ft != "markdown"
-    echohl Error
-    echo "filetype is not markdown"
-    echohl None
-    return
-  endif
-
-  let lvl = []
-  let sect = []
-  let out = ""
-  for i in range(1, line('$'), 1)
-    let line = getline(i)
-    let heading_lvl = strlen(substitute(line, '^\(#*\).*', '\1', ''))
-    if heading_lvl < 2
-      continue
-    endif
-    " there should be only 1 H1, topmost, on a conventional web page
-    " we should generate section numbers begin with the first heading level 2
-    if len(lvl) == 0
-      if heading_lvl != 2 " count from level 2
+    if &ft != "markdown"
         echohl Error
-        echo "subsection must have parent section, ignore illegal heading line at line " . i
+        echo "filetype is not markdown"
         echohl None
-        continue
-      endif
-      call add(sect, 1)
-      call add(lvl, heading_lvl)
-    else
-      if lvl[-1] == heading_lvl
-        let sect[-1] = sect[-1] + 1
-      elseif lvl[-1] > heading_lvl " pop all lvl less than heading_lvl from tail
-        while len(lvl) != 0 && lvl[-1] > heading_lvl
-          call remove(lvl, -1)
-          call remove(sect, -1)
-        endwhile
-        let sect[-1] = sect[-1] + 1
-      elseif lvl[-1] < heading_lvl
-        if heading_lvl - lvl[-1] != 1
-          echohl Error
-          echo "subsection must have parent section, ignore illegal heading line at line " . i
-          echohl None
-          continue
-        endif
-        call add(sect, 1)
-        call add(lvl, heading_lvl)
-      endif
+        return
     endif
 
-    let cur_sect = ""
-    for j in sect
-      let cur_sect = cur_sect . "." . j
+    let lvl = []
+    let sect = []
+    let out = ""
+    for i in range(1, line('$'), 1)
+        let line = getline(i)
+        let heading_lvl = strlen(substitute(line, '^\(#*\).*', '\1', ''))
+        if heading_lvl < 2
+            continue
+        endif
+        " there should be only 1 H1, topmost, on a conventional web page
+        " we should generate section numbers begin with the first heading level 2
+        if len(lvl) == 0
+            if heading_lvl != 2 " count from level 2
+                echohl Error
+                echo "subsection must have parent section, ignore illegal heading line at line " . i
+                echohl None
+                continue
+            endif
+            call add(sect, 1)
+            call add(lvl, heading_lvl)
+        else
+            if lvl[-1] == heading_lvl
+                let sect[-1] = sect[-1] + 1
+            elseif lvl[-1] > heading_lvl " pop all lvl less than heading_lvl from tail
+                while len(lvl) != 0 && lvl[-1] > heading_lvl
+                    call remove(lvl, -1)
+                    call remove(sect, -1)
+                endwhile
+                let sect[-1] = sect[-1] + 1
+            elseif lvl[-1] < heading_lvl
+                if heading_lvl - lvl[-1] != 1
+                    echohl Error
+                    echo "subsection must have parent section, ignore illegal heading line at line " . i
+                    echohl None
+                    continue
+                endif
+                call add(sect, 1)
+                call add(lvl, heading_lvl)
+            endif
+        endif
+
+        let cur_sect = ""
+        for j in sect
+            let cur_sect = cur_sect . "." . j
+        endfor
+        let cur_sect = cur_sect[1:]
+        let out = out . " " . cur_sect
+        call setline(i, substitute(line, '^\(#\+\) \?\([0-9.]\+ \)\? *\(.*\)', '\1 ' . cur_sect . ' \3', line))
     endfor
-    let cur_sect = cur_sect[1:]
-    let out = out . " " . cur_sect
-    call setline(i, substitute(line, '^\(#\+\) \?\([0-9.]\+ \)\? *\(.*\)', '\1 ' . cur_sect . ' \3', line))
-  endfor
-  " echo lvl sect out
-  echo out
+    " echo lvl sect out
+    echo out
 endfunc
+
+" Use <Tab> and <S-Tab> to navigate the completion list
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
