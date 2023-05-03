@@ -476,3 +476,7 @@ endfunc
 " Use <Tab> and <S-Tab> to navigate the completion list
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" 持久化undo/redo
+set undofile "Maintain undo history between sessions"
+set undodir=~/.vim/undodir
