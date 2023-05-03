@@ -3,6 +3,12 @@
 " 定义快捷键的前缀，即<Leader>
 let mapleader=";"
 
+call plug#begin()
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
+
 " pathogen plugin manager
 execute pathogen#infect()
 " syntax on
