@@ -6,6 +6,7 @@ let mapleader=";"
 call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 call plug#end()
 
 
@@ -486,3 +487,16 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " 持久化undo/redo
 set undofile "Maintain undo history between sessions"
 set undodir=~/.vim/undodir
+
+" markdown-preview.nvim
+" let g:mkdp_browser = '/usr/bin/google-chrome'
+" let g:mkdp_echo_preview_url = 1
+"
+" 参考：https://github.com/iamcco/markdown-preview.nvim/pull/9
+" let g:mkdp_open_to_the_world = 1
+" let g:mkdp_open_ip = '127.0.0.1'
+" let g:mkdp_port = 8080
+" function! g:EchoUrl(url)
+"     :echo a:url
+" endfunction
+" let g:mkdp_browserfunc = 'g:EchoUrl'
