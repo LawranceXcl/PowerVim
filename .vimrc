@@ -197,7 +197,12 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 "clang-format 格式化
 "版本1
 let g:formatterpath = ['/usr/bin/clang-format']
-au BufWrite * :Autoformat
+
+"保存时自动格式化代码，针对所有支持的文件
+" au BufWrite * :Autoformat
+
+"保存时自动格式化c,cpp,python 代码
+autocmd FileType c,cpp,python autocmd BufWritePre * :Autoformat
 
 " let g:clang_format #command = 'clang-format'
 " nmap <F4> :ClangFormat<cr>
