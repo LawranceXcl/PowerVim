@@ -509,3 +509,19 @@ set undodir=~/.vim/undodir
 "     :echo a:url
 " endfunction
 " let g:mkdp_browserfunc = 'g:EchoUrl'
+
+"gtags 配置
+
+"GTAGSLABEL 告诉 gtags 默认 C/C++/Java 等六种原生支持的代码直接使用 gtags 本地分析器，而其他语言使用 pygments 模块
+let $GTAGSLABEL='native-pygments'
+
+"该环境变量必须设置，否则会找不到 native-pygments 和 language map 的定义
+let $GTAGSCONF='/usr/share/local/gtags/gtags.conf'
+
+set cscopetag " 使用 cscope 作为 tags 命令
+set cscopeprg='gtags-cscope' " 使用 gtags-cscope 代替 cscope
+
+"解决切换窗口出现001b >4;2m 乱码的问题: 
+"https://stackoverflow.com/questions/62148994/strange-character-since-last-update-42m-in-vim 
+let &t_TI = ""
+let &t_TE = ""
