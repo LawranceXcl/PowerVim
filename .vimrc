@@ -530,3 +530,7 @@ set cscopeprg='gtags-cscope' " 使用 gtags-cscope 代替 cscope
 "https://stackoverflow.com/questions/62148994/strange-character-since-last-update-42m-in-vim 
 let &t_TI = ""
 let &t_TE = ""
+
+"Floaterm 悬浮窗口 keymap
+let g:floaterm_keymap_kill = '<F8>'
+let g:floaterm_keymap_new = '<F7>'
