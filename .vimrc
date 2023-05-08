@@ -8,6 +8,10 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'voldikss/vim-floaterm'
+
+Plug 'skywind3000/vim-auto-popmenu'
+Plug 'skywind3000/vim-dict'
+
 call plug#end()
 
 
@@ -534,3 +538,18 @@ let &t_TE = ""
 "Floaterm 悬浮窗口 keymap
 let g:floaterm_keymap_kill = '<F8>'
 let g:floaterm_keymap_new = '<F7>'
+
+"超轻量级补全系统:https://zhuanlan.zhihu.com/p/349271041
+"<ctrl-e>关闭补全框
+" **************************************************
+let g:apc_enable = 0
+" 设定需要生效的文件类型，如果是 "*" 的话，代表所有类型
+let g:apc_enable_ft = {'text':0, 'markdown':0, 'php':0}
+" 设定从字典文件以及当前打开的文件里收集补全单词，详情看 ':help cpt'
+"set cpt=.,k,w,b
+" 不要自动选中第一个选项。
+" set completeopt=menu,menuone,noselect
+set completeopt=menu,preview
+" 禁止在下方显示一些啰嗦的提示
+set shortmess+=c
+" ********************end***************************
