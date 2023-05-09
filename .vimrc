@@ -538,6 +538,7 @@ let &t_TE = ""
 "Floaterm 悬浮窗口 keymap
 let g:floaterm_keymap_kill = '<F8>'
 let g:floaterm_keymap_new = '<F7>'
+let g:floaterm_position = 'bottomright'
 
 "超轻量级补全系统:https://zhuanlan.zhihu.com/p/349271041
 "<ctrl-e>关闭补全框
