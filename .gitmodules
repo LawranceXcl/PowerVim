@@ -4,3 +4,21 @@
 [submodule ".vim/bundle/coc.nvim"]
 	path = .vim/bundle/coc.nvim
 	url = git@github.com:neoclide/coc.nvim.git
+[submodule ".vim/bundle/fzf"]
+	path = .vim/bundle/fzf
+	url = git@github.com:junegunn/fzf.git
+[submodule ".vim/bundle/ctrlp.vim"]
+	path = .vim/bundle/ctrlp.vim
+	url = git@github.com:ctrlpvim/ctrlp.vim.git
+[submodule ".vim/bundle/vim-autoformat"]
+	path = .vim/bundle/vim-autoformat
+	url = git@github.com:vim-autoformat/vim-autoformat.git
+[submodule ".vim/bundle/vim-lastplace"]
+	path = .vim/bundle/vim-lastplace
+	url = git@github.com:farmergreg/vim-lastplace.git
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule ".vim/bundle/vim-markdown"]
+	path = .vim/bundle/vim-markdown
+	url = git@github.com:preservim/vim-markdown.git
