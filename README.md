@@ -22,11 +22,12 @@
 
 PowerVim的安装非常简单，我已经写好了安装脚本，只要执行以下就可以安装，而且不会影响你之前的vim配置，之前的配置都给做了备份，大家看一下脚本就知道备份在哪里了。
 
-安装过程非常简单。如下三行命令：
+安装:
 
 ```bash
-git clone https://github.com/youngyangyang04/PowerVim.git
+git clone git@github.com:LawranceXcl/PowerVim.git
 cd PowerVim
+git submodule update --init
 sh install.sh
 ```
 
@@ -90,6 +91,10 @@ di{             // 删除花括号里的内容
 
 //ctrlp
 ctrl - p:       //normal模式下，进行文件查找
+
+//Floaterm
+F7:   FloatermNew(打开一个悬浮窗口)
+F8:   FloatermKill(关闭悬浮窗口)
 ```
 # 插件
 * a.vim [https://github.com/vim-scripts/a.vim](https://github.com/vim-scripts/a.vim)
