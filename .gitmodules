@@ -33,4 +33,4 @@
 	url = https://github.com/iamcco/markdown-preview.nvim.git
 [submodule ".vim/plugged/fzf.vim"]
 	path = .vim/plugged/fzf.vim
-	url = https://github.com/junegunn/fzf.vim.git
+	url = git@github.com:junegunn/fzf.vim.git
