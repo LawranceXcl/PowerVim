@@ -34,3 +34,6 @@
 [submodule ".vim/plugged/fzf.vim"]
 	path = .vim/plugged/fzf.vim
 	url = git@github.com:junegunn/fzf.vim.git
+[submodule ".vim/plugged/fzf"]
+	path = .vim/plugged/fzf
+	url = git@github.com:junegunn/fzf.git
