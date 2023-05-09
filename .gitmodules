@@ -22,3 +22,15 @@
 [submodule ".vim/bundle/vim-markdown"]
 	path = .vim/bundle/vim-markdown
 	url = git@github.com:preservim/vim-markdown.git
+[submodule ".vim/plugged/vim-floaterm"]
+	path = .vim/plugged/vim-floaterm
+	url = git@github.com:voldikss/vim-floaterm.git
+[submodule ".vim/plugged/vim-dict"]
+	path = .vim/plugged/vim-dict
+	url = git@github.com:skywind3000/vim-dict.git
+[submodule ".vim/plugged/markdown-preview.nvim"]
+	path = .vim/plugged/markdown-preview.nvim
+	url = https://github.com/iamcco/markdown-preview.nvim.git
+[submodule ".vim/plugged/fzf.vim"]
+	path = .vim/plugged/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
