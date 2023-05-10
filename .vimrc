@@ -9,8 +9,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'voldikss/vim-floaterm'
 
-Plug 'skywind3000/vim-auto-popmenu'
-Plug 'skywind3000/vim-dict'
+"Plug 'skywind3000/vim-auto-popmenu'
+"Plug 'skywind3000/vim-dict'
 
 call plug#end()
 
