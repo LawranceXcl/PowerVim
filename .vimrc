@@ -539,6 +539,7 @@ let &t_TE = ""
 let g:floaterm_keymap_kill = '<F8>'
 let g:floaterm_keymap_new = '<F7>'
 let g:floaterm_position = 'bottomright'
+let g:floaterm_height = 0.8
 
 "超轻量级补全系统:https://zhuanlan.zhihu.com/p/349271041
 "<ctrl-e>关闭补全框
