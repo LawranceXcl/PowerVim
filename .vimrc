@@ -62,6 +62,14 @@ set showmatch        " Show matching brackets.
 set guioptions-=T
 set expandtab
 
+"隐藏顶部标签栏
+set showtabline=0
+
+"突出显示当前行
+set cursorline
+
+"突出显示当前列
+set cursorcolumn
 let curpwd = getcwd()
 " vim自身命令行模式智能补全
 set wildmenu
