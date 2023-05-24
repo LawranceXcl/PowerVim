@@ -9,7 +9,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'voldikss/vim-floaterm'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-
+Plug 'Yggdroot/indentLine'
+Plug 'tell-k/vim-autopep8'
 "Plug 'skywind3000/vim-auto-popmenu'
 "Plug 'skywind3000/vim-dict'
 
@@ -220,7 +221,7 @@ let g:formatterpath = ['/usr/bin/clang-format']
 " au BufWrite * :Autoformat
 
 "保存时自动格式化c,cpp,python 代码
-autocmd FileType c,cpp,python autocmd BufWritePre * :Autoformat
+autocmd FileType c,cpp autocmd BufWritePre * :Autoformat
 
 " let g:clang_format #command = 'clang-format'
 " nmap <F4> :ClangFormat<cr>
@@ -575,3 +576,12 @@ noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
 noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
 "*********************end***********************
+
+"缩进指示线
+let g:indentLine_char='┆'
+let g:indentLine_enabled = 1
+
+"autopep8设置
+let g:autopep8_disable_show_diff = 1
+let g:autopep8_indent_size = 2
+let g:autopep8_on_save = 1
