@@ -8,6 +8,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'voldikss/vim-floaterm'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 
 "Plug 'skywind3000/vim-auto-popmenu'
 "Plug 'skywind3000/vim-dict'
@@ -563,3 +564,14 @@ set completeopt=menu,preview
 " 禁止在下方显示一些啰嗦的提示
 set shortmess+=c
 " ********************end***************************
+
+" LeaderF
+"***********************************************
+let g:Lf_PreviewInPopup = 1
+let g:WindowPosition = 'popup'
+
+noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
+noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
+noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
+"*********************end***********************
