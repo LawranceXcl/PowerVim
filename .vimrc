@@ -9,8 +9,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'voldikss/vim-floaterm'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-Plug 'Yggdroot/indentLine'
 Plug 'tell-k/vim-autopep8'
+Plug 'APZelos/blamer.nvim'
 "Plug 'skywind3000/vim-auto-popmenu'
 "Plug 'skywind3000/vim-dict'
 
@@ -585,3 +585,12 @@ let g:indentLine_enabled = 1
 let g:autopep8_disable_show_diff = 1
 let g:autopep8_indent_size = 2
 let g:autopep8_on_save = 1
+
+"blamer.nvim
+"打开blamer存在乱码的情况,待解决
+let g:blamer_enabled = 0
+let g:blamer_delay = 100
+let g:blamer_show_in_insert_modes = 0
+let g:blamer_prefix = ' > '
+let g:blamer_date_format = '%d/%m/%y'
+" highlight Blamer guifg=lightgrey
