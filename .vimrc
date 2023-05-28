@@ -567,6 +567,7 @@ set shortmess+=c
 " ********************end***************************
 
 " LeaderF
+" https://retzzz.github.io/dc9af5aa/
 "***********************************************
 let g:Lf_PreviewInPopup = 1
 let g:WindowPosition = 'popup'
@@ -575,6 +576,13 @@ noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
 noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
 noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
+
+"<leadf>fr: 将会在命令行显示 :Leaderf rg -e, 然后等待用户输入想要查询的正则表达式.
+nmap <unique> <leader>fr <Plug>LeaderfRgPrompt
+
+"将会直接查询光标所在的词语或者visual模式下选中的词语, 但是没有边界.
+"没有边界的意思是说如果你查word, 包含abcwordxyz的行也会被搜到.
+nmap <unique> <leader>fra <Plug>LeaderfRgCwordLiteralNoBoundary
 "*********************end***********************
 
 "缩进指示线
